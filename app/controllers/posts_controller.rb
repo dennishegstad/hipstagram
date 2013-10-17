@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_userposts.build(post_params)
+    @post = current_user.posts.build(post_params)
       if @post.save
        redirect_to @post, notice: 'Post was successfully created.' 
       else
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    edirect_to posts_url
+    redirect_to posts_url
   end
 
   private
@@ -52,6 +52,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description)
+      params.require(:post).permit(:title, :description, :photo)
     end
 end
