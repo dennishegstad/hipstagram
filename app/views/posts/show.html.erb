@@ -1,16 +1,26 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<%= image_tag @post.photo.url %>
-
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-
-<% if @post.user == current_user %>
-	<%= link_to 'Edit', edit_post_path(@post) %> |
-<% end %> 
 <%= link_to 'Back', posts_path %>
+
+<div class="row">
+	<div class="ad-header">
+		Insert Ad Code 
+	</div>
+	<div class="col-md-2 col-md-8">
+		<div class="panel panel-default">
+			<p class="center">
+				<%= @post.title %>
+			</p>
+		  
+		<div class="panel-body center">
+			<%= image_tag @post.photo.url %>
+			<p><%= @post.description %></p>
+		</div>
+
+		<% if @post.user == current_user %>
+			<%= link_to edit_post_path(@post) do %>
+       <span class="glyphicon glyphicon-edit"></span>
+     		Edit 
+      <% end %>
+     <% end %>
+		</div>
+	</div>
+</div>
