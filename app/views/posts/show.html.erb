@@ -1,7 +1,7 @@
 <%= link_to 'Back', posts_path %>
 
 <div class="container">
-	<div class="row">
+	<div class="row fluid">
 		<div class="col-md-8">
 			<div class="panel panel-default">
 				<p class="center h3">
@@ -20,10 +20,11 @@
 					(adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
 				</p>
-			</div>	 
+			</div>	
+
 			<div class="panel-body center">
-				<%= image_tag @post.photo.url %>
-				<p><%= @post.description %></p>
+					<%= image_tag @post.photo.url %>
+					<p><%= @post.description %></p>
 			</div>
 
 			<div class="ad-footer">
@@ -69,7 +70,7 @@
 					</p>
 				</div>
 				<div class="facebook">
-					<p>Facebook Like Box</p>
+					<div class="fb-like-box" data-href="http://www.facebook.com/Loomin8" data-width="300" data-height="250" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
 				</div>
 				<div class="email-sub">
 					<p>Email sub box</p>
